@@ -1,0 +1,26 @@
+<title>Simple chat</title>
+<script>
+  document.createElement('chats')
+</script>
+<div class="chat pre-scrollable">
+<% @messageslast.each do |d| %>
+<chats class="nic"><%= d.nick%>:</chats>  <%= d.content %><br>
+<% end %>
+</div>
+<div class="cross">
+<%= form_for :message, url: messages_path do |f| %>
+    <p>
+      <%= f.label "Ник" %>
+      <%= f.text_field :nick%>
+    </p>
+
+    <p>
+      <%= f.label "Содержание" %>
+      <%= f.text_area :content%>
+    </p>
+
+    <p class="btn-default">
+      <%= f.submit%>
+    </p>
+      </div>
+<% end %>
