@@ -1,7 +1,5 @@
 <title>Simple chat</title>
-<script>
-  document.createElement('chats')
-</script>
+<%= render 'layouts/header' %>
 <div class="chat pre-scrollable">
 <% @messageslast.each do |d| %>
 <chats class="nic"><%= d.nick%>:</chats>  <%= d.content %><br>
@@ -23,4 +21,5 @@
       <%= f.submit%>
     </p>
       </div>
+      <%= render 'layouts/footer' %>
 <% end %>
